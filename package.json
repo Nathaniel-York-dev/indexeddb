@@ -1,0 +1,32 @@
+{
+  "name": "@steadfast-devs/indexeddb",
+  "version": "1.0.0-alpha.1",
+  "description": "This library will be used by members of steadfast developers but if you find it and help you feel you free to use it.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nathaniel-York-dev/indexeddb.git"
+  },
+  "keywords": [
+    "steadfast-devs",
+    "steadfast-deelopers",
+    "indexeddb"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "nathanielyork.dev@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nathaniel-York-dev/indexeddb/issues"
+  },
+  "homepage": "https://github.com/Nathaniel-York-dev/indexeddb#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
