@@ -24,7 +24,6 @@ export class IndexedDataBase {
     }
 
     private async createCollection(collectionName: string, schema: Schema, db: IDBDatabase){
-        debugger;
         if(!db.objectStoreNames.contains(collectionName)){
             const objectStore = db.createObjectStore(collectionName, { keyPath: schema.primaryKey });
             for(const field of Object.keys(schema.properties)){

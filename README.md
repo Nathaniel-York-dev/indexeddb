@@ -53,6 +53,25 @@ db.getData('users', 'myUsername').then(user => {
 });
 ```
 
+## Example Angular Service
+```javascript
+...
+import { IndexedDataBase } from '@steadfast-devs/indexeddb';
+import { UserSchema } from './user.schema';
+@Injectable({
+  providedIn: 'root'
+})
+export class dbServices{
+    public instance: IndexedDataBase;
+    constructor(){
+        ...
+        IndexedDataBase.registerCollection('users', UserSchema);
+        ...
+        this.instance = new IndexedDataBase('myDatabase', 1);
+    }
+}
+```
+
 ## Version Notes
 ### 1.0.0-alpha.1.0.0 to 2.0.0-alpha.1.1.0
 - Some methods were changed to be more intuitive
