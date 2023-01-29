@@ -22,15 +22,15 @@ export const UserSchema: Schema = {
   required: ['username', 'password'],
 };
 ```
-Then you need to inizialize the database, and pass the schema to the createCollection method
+Then you need to register the collections
 ```javascript
 import { IndexedDataBase } from '@steadfast-devs/indexeddb';
 
-//The constructor takes the name of the database and the version
-const db = new IndexedDataBase('myDatabase', 1);
+// You need use the static method registerCollection 
+IndexedDataBase.registerCollection('users', UserSchema);
 
-//The createCollection method takes the name of the collection and the schema
-db.createCollection('users', UserSchema);
+// Then you can instantiate the IndexedDataBase class. You need to pass the database name and the version
+const db = new IndexedDataBase('myDatabase', 1);
 ```
 
 Now you can use the database
@@ -51,3 +51,26 @@ db.getAllData('users').then(users => {
 db.getData('users', 'myUsername').then(user => {
     console.log(user);
 });
+```
+
+## Version Notes
+### 1.0.0-alpha.1.0.0 to 2.0.0-alpha.1.1.0
+- Some methods were changed to be more intuitive
+### example:
+```javascript
+// Before
+// First we need to instantiate the database
+import { IndexedDataBase } from '@steadfast-devs/indexeddb';
+const db = new IndexedDataBase('myDatabase', 1);
+// Then we need to create the collection
+db.createCollection('users', UserSchema);
+
+// After
+// We need to register the collection first
+import { IndexedDataBase } from '@steadfast-devs/indexeddb';
+IndexedDataBase.registerCollection('users', UserSchema);
+IndexedDataBase.registerCollection('task', TaskSchema);
+...
+// Then we can instantiate the database
+const db = new IndexedDataBase('myDatabase', 1);
+```
