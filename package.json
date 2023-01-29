@@ -1,6 +1,6 @@
 {
   "name": "@steadfast-devs/indexeddb",
-  "version": "2.0.0-alpha.1.1.0",
+  "version": "2.0.0-alpha.1.1.1",
   "description": "This library will be used by members of steadfast developers but if you find it and help you feel you free to use it.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
